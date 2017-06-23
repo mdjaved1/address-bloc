@@ -48,6 +48,7 @@ class MenuController
        when 6
          system "clear"
          view_entry
+         main_menu
        # #9
        else
          system "clear"
@@ -90,14 +91,16 @@ class MenuController
    end
    def view_entry
        print "Number: "
-       n = gets.chomp
-    address_book.entries.each do |entry|
-     system "clear"
-     if entry == n
-       puts entry.to_s
-     entry_submenu(entry)
-     end
-    end
+       selection = gets.chomp.to_i
+       if  selection < address_book.entries.count
+           puts address_book.entries[selection]
+           puts "Press enter to return to main menu"
+           gets.chomp
+           system "clear"
+       else
+           puts "invalid"
+           main_menu
+       end
    end
  
    def read_csv
