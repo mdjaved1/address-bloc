@@ -99,7 +99,7 @@ class MenuController
            system "clear"
        else
            puts "invalid"
-           main_menu
+           view_entry
        end
    end
  
