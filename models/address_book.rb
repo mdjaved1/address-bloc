@@ -55,5 +55,15 @@
      # #5
      return nil
    end
+   def iterative_search(name)
+     index = 0
+     if entries[index] == name
+         return name
+     else
+        index += 1 
+     end
+   
+     return nil
+   end   
    
  end
