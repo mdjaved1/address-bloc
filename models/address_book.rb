@@ -56,13 +56,12 @@
      return nil
    end
    def iterative_search(name)
-     index = 0
-     if entries[index] == name
-         return name
-     else
-        index += 1 
+       
+     entries.each do |entry|
+       if entry.name == name
+           return entry
+       end  
      end
-   
      return nil
    end   
    
