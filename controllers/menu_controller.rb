@@ -189,5 +189,10 @@ class MenuController
          search_submenu(entry)
      end
    end
+   def nuke 
+     address_book.entries.each do |entry|
+       delete_entry(entry)
+      end
+   end
    
 end
