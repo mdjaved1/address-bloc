@@ -130,6 +130,18 @@
        expect(entry).to be_nil
      end
    end
+   
+   describe "#nuke" do
+    it "should delete all entries " do
+     book.add_entry("jhsajh","1231234","hdjahdshjdhj")
+     book.add_entry("jhsajh","1231234","hdjahdshjdhj")
+     book.add_entry("jhsajh","1231234","hdjahdshjdhj")
+     
+     book.nuke
+     expect(book.entries.size).to eq(0)
+    end
+   end
+
  
 end
 

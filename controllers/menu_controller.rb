@@ -14,7 +14,8 @@ class MenuController
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
-     puts "5 - Exit"
+     puts "5 - remove all entries"
+     puts "6 - Exit"
      print "Enter your selection: "
  
      # #3
@@ -37,6 +38,11 @@ class MenuController
          read_csv
          main_menu
        when 5
+         system "clear"
+         @address_book.nuke
+         puts "All entries deleted!"
+         main_menu
+       when 6
          puts "Good-bye!"
          # #8
          exit(0)
@@ -188,11 +194,6 @@ class MenuController
          puts entry.to_s
          search_submenu(entry)
      end
-   end
-   def nuke 
-     address_book.entries.each do |entry|
-       delete_entry(entry)
-      end
    end
    
 end
